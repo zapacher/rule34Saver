@@ -2,7 +2,7 @@
 
 AutoSaving content from rule34 by provided search list.
 
-Before saves, checks if the same filename/directory already exists, this makes no duplicates. 
+Before saving, it self-checks is the same filename/directory already exists, this makes possible to run without duplicates. 
 
 ```application.yml```
 * __Settings:__
