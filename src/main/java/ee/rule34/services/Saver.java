@@ -1,5 +1,7 @@
 package ee.rule34.services;
 
+import ee.rule34.Properties;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -8,7 +10,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Saver {
-    String savePath = System.getProperty("user.home") + "/Downloads/rule34/";
+    Properties properties = new Properties();
+    String savePath = System.getProperty("user.home") + properties.getSaveFolder();
     public void saveFromLink(String link, String directory) {
         folderCheck(directory);
         String saveFilePath = savePath + directory + File.separator + link.substring(link.lastIndexOf("/") + 1);

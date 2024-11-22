@@ -1,27 +1,25 @@
 package ee.rule34;
 
 import ee.rule34.services.Search;
-import ee.rule34.services.SearchList;
 
 import java.util.List;
 
-public class Main {
-    static List<String> searchList = new SearchList().getSeatchList();
+public class Application {
+    static Properties properties = new Properties();
 
     public static void main(String[] args) {
-        while(true) {
+        List<String> searchList = properties.getSearchList();
+        while (true) {
             for (String searchThis : searchList) {
-                while (Thread.activeCount() > 6) {
+                while (Thread.activeCount() > properties.getThreads()) {
                     try {
-                        System.out.println("sleeping for " + searchThis);
                         Thread.sleep(5000);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
                 }
-                System.out.println("Started thread for : " + searchThis);
                 Search search = new Search();
-                search.setSearch("https://rule34.xxx/index.php?page=post&s=list&tags=" + searchThis, searchThis);
+                search.setSearch(properties.getSearchUrl() + searchThis, searchThis);
                 search.startSearch();
             }
         }

@@ -27,7 +27,6 @@ public class Search extends Thread {
             Saver saver = new Saver();
             saver.saveFromLink(url, ownDirectory);
         }
-        System.out.println(ownDirectory + " <- Done");
     }
 
     public void setSearch(String searchUrl, String category) {
