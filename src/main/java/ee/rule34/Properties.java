@@ -40,11 +40,16 @@ public class Properties {
             Map<String, Object> config = yaml.load(input);
 
             Map<String, Object> application = (Map<String, Object>) config.get("application");
-            this.threads = (Integer) application.get("threads");
-            this.saveFolder = (String) application.get("saveFolder");
-            this.searchList = (List<String>) application.get("searchList");
-            this.baseUrl = (String) application.get("baseUrl");
-            this.searchUrl = (String) application.get("searchUrl");
+
+            Map<String, Object> defaultConfig = (Map<String, Object>) application.get("default");
+            Map<String, Object> settings = (Map<String, Object>) application.get("settings");
+
+            // Assign values from the nested YAML structure
+            this.baseUrl = (String) defaultConfig.get("baseUrl");
+            this.searchUrl = (String) defaultConfig.get("searchUrl");
+            this.threads = (Integer) settings.get("threads");
+            this.saveFolder = (String) settings.get("saveFolder");
+            this.searchList = (List<String>) settings.get("searchList");
         } catch (Exception e) {
             e.printStackTrace();
         }

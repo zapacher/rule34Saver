@@ -1,9 +1,14 @@
 application:
-  threads: 10
-  saveFolder: "/Downloads/rule34/"
-  baseUrl: "https://rule34.xxx"
-  searchUrl: "https://rule34.xxx/index.php?page=post&s=list&tags="
-  searchList:
-  - "lara_croft"
-  - "ada_wong"
-  - "3d"
+  default:
+    baseUrl: "https://rule34.xxx"
+    searchUrl: "https://rule34.xxx/index.php?page=post&s=list&tags="
+  settings:
+    threads: 2
+    saveFolder: "/Downloads/rule34/"
+    searchList:
+    - "lara_croft"
+    - "ada_wong"
+    - "3d"
+    - "lara_croft+ada_wong"
+    - "lara_croft+ada_wong+3d"
+    - "lara_croft+-ai_generated"

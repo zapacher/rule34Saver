@@ -2,15 +2,12 @@ package ee.rule34;
 
 import ee.rule34.services.Search;
 
-import java.util.List;
-
 public class Application {
     static Properties properties = new Properties();
 
     public static void main(String[] args) {
-        List<String> searchList = properties.getSearchList();
         while (true) {
-            for (String searchThis : searchList) {
+            for (String searchThis : properties.getSearchList()) {
                 while (Thread.activeCount() > properties.getThreads()) {
                     try {
                         Thread.sleep(5000);
@@ -22,6 +19,7 @@ public class Application {
                 search.setSearch(properties.getSearchUrl() + searchThis, searchThis);
                 search.startSearch();
             }
+            System.out.println("SearchList ends, going for next round");
         }
     }
 }
