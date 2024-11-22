@@ -12,7 +12,7 @@ Before saving, it self-checks is the same filename/directory already exists, thi
 
 ```run Application.class```
 
-__Why this idea was born?__ <br>
+__Why this order was born?__ <br>
 Because of the restrictions of content, it may be deleted before you will see it. But it is deleted by hands, after it was published.
 Because of this, application can download new content after it was published and before it was deleted.
 
