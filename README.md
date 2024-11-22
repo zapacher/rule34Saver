@@ -12,7 +12,7 @@ Before saving, it self-checks is the same filename/directory already exists, thi
 
 ```run Application.class```
 
-Why this idea was born?
+__Why this idea was born?__
 Because of the restrictions of content, it may be deleted before you will see it. But it is deleted by hands, after it was published.
 Because of this, this application can download new content after it was published and before it was deleted.
 
