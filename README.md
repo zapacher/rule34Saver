@@ -1,4 +1,4 @@
-RULE34 SAVER
+## RULE34 SAVER
 
 AutoSaving content from rule34 by provided search list.
 
@@ -10,7 +10,7 @@ application.yml
     * __saveFolder:__  _folder where content will be saved and sorted by search word._
     * __searchList:__ _each search in new line, can be combined as demonstrated, can exclude tags from search result by "+-"._
 
-# run Application.class
+```run Application.class```
 
 Why this idea was born?
 Because of the restrictions of content, it may be deleted before you will see it. But it is deleted by hands, after it was published.
